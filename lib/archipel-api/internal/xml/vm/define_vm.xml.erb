@@ -1,0 +1,72 @@
+<query xmlns="archipel:vm:definition">
+  <archipel action="define">
+    <domain type="kvm">
+      <name><%= name %></name>
+      <uuid><%= uuid %></uuid>
+      <memory unit="MiB"><%= memory %></memory>
+      <currentMemory unit="MiB"><%= memory %></currentMemory>
+      <vcpu><%= cpu %></vcpu>
+      <os>
+        <type machine="pc-1.3" arch="x86_64">hvm</type>
+        <boot dev="hd"/>
+        <bootmenu enable="yes"/>
+      </os>
+      <clock offset="utc"/>
+      <on_poweroff>destroy</on_poweroff>
+      <on_reboot>restart</on_reboot>
+      <on_crash>restart</on_crash>
+      <features>
+        <acpi/>
+        <apic/>
+      </features>
+      <devices>
+        <emulator>/usr/bin/qemu-kvm</emulator>
+        <disk device="disk" type="file">
+          <driver cache="none" type="qcow2" name="qemu"/>
+          <%= tag :source, file: "/var/lib/libvirt/images/archipel/drives/#{uuid}/disk.qcow2" %>
+          <target bus="virtio" dev="vda"/>
+          <address slot="0x04" bus="0x00" domain="0x0000" type="pci" function="0x0"/>
+        </disk>
+        <disk device="cdrom" type="file">
+          <driver cache="none" type="raw" name="qemu"/>
+          <%= tag :source, file: "/var/lib/libvirt/images/archipel/iso/#{iso}.iso" %>
+          <target bus="ide" dev="hdc"/>
+          <readonly/>
+          <address bus="1" controller="0" type="drive" target="0" unit="0"/>
+        </disk>
+        <interface type="bridge">
+          <% tag :mac, address: mac %>
+          <source bridge="br0"/>
+          <target dev="vnet0"/>
+          <model type="rtl8139"/>
+          <filterref filter="clean-traffic">
+            <% ips.each do |ip| %>
+              <%= tag :parameter, name: 'IP', value: ip %>
+            <% end %>
+          </filterref>
+          <alias name="net0"/>
+          <address slot="0x03" bus="0x00" domain="0x0000" type="pci" function="0x0"/>
+        </interface>
+        <%= content_tag :graphics, passwd: vnc_password, port: vnc_port, listen: '127.0.0.1', autoport: 'yes',
+                multiuser: 'yes', fullscreen: 'no', keymap: 'en-us', type: 'vnc' do %>
+          <listen type="address" address="127.0.0.1"/>
+        <% end %>
+        <input type="mouse" bus="ps2"/>
+        <serial type="pty">
+          <target port="0"/>
+        </serial>
+        <controller type="usb" index="0">
+          <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x2"/>
+        </controller>
+        <controller type="ide" index="0">
+          <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x1"/>
+        </controller>
+        <controller type="pci" index="0" model="pci-root"/>
+        <video>
+          <model type="vga" vram="9216" heads="1"/>
+          <address bus="0x00" domain="0x0000" function="0x0" slot="0x02" type="pci"/>
+        </video>
+      </devices>
+    </domain>
+  </archipel>
+</query>

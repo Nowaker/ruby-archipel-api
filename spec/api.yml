@@ -1,0 +1,6 @@
+login: login@xmpp.example.com
+password: secret
+server: xmpp.example.com
+hypervisor: hypervisor@xmpp.example.com/resource
+debug: false
+xmpp_debug: false

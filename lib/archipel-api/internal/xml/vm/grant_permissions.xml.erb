@@ -1,0 +1,12 @@
+<query xmlns="archipel:permissions">
+  <archipel action="set">
+    <% enabled_permissions.each do |permission| %>
+      <%= tag :permission, permission_target: "#{user_jid}", permission_name: permission,
+              permission_value: 1, permission_type: 'user' %>
+    <% end %>
+    <% disabled_permissions.each do |permission| %>
+      <%= tag :permission, permission_target: "#{user_jid}", permission_name: permission,
+              permission_value: 0, permission_type: 'user' %>
+    <% end %>
+  </archipel>
+</query>
