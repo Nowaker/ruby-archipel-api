@@ -16,6 +16,8 @@ Then execute:
 
     $ bundle
 
+Gem requires Ruby 2.1 to function.
+
 ## Usage
 
 Authenticate any time you instantiate an API object:
