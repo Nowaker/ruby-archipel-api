@@ -7,8 +7,7 @@ class Archipel::VmApi < Archipel::Internal::Api
     @api = Archipel::Internal::VmXmlMessages.new
     super({login: login,
         password: password,
-        server: server,
-        hypervisor: hypervisor})
+        server: server})
   end
 
   def remove_disk jid, name, format
