@@ -1,5 +1,7 @@
 # Archipel API
 
+[![Gem Version](https://badge.fury.io/rb/archipel-api.png)](http://badge.fury.io/rb/archipel-api)
+
 Ruby API for Archipel Agent, an XMPP-based orchestrator. See [http://archipelproject.org/](http://archipelproject.org/).
 
 This gem is brought to you by [PacmanVPS](https://www.pacmanvps.com), an Arch Linux VPS hosting provider.
