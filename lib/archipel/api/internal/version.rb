@@ -1,3 +1,7 @@
 module Archipel
-  VERSION = '1'
+  module Api
+    module Internal
+      VERSION = '1'
+    end
+  end
 end

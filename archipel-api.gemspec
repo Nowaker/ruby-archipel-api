@@ -4,7 +4,7 @@ require 'archipel/api/internal/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'archipel-api'
-  spec.version = Archipel::VERSION
+  spec.version = Archipel::Api::Internal::VERSION
   spec.authors = ['Damian Nowak']
   spec.email = ['damian.nowak@pacmanvps.com']
   spec.summary = 'API for Archipel Agent, an XMPP-based orchestrator'
