@@ -2,9 +2,9 @@ require_relative 'internal/api'
 require_relative 'internal/vm_xml_messages'
 
 
-class Archipel::VmApi < Archipel::Internal::Api
+class Archipel::Api::VmApi < Archipel::Api::Internal::Api
   def initialize login: nil, password: nil, server: nil, hypervisor: nil
-    @api = Archipel::Internal::VmXmlMessages.new
+    @api = Archipel::Api::Internal::VmXmlMessages.new
     super({login: login,
         password: password,
         server: server})

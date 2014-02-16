@@ -1,8 +1,8 @@
 require_relative 'xml_messages'
 
 
-class Archipel::Internal::HypervisorXmlMessages
-  include Archipel::Internal::XmlMessages
+class Archipel::Api::Internal::HypervisorXmlMessages
+  include Archipel::Api::Internal::XmlMessages
 
   def register_user jid, password
     render 'register_user', jid: jid, password: password

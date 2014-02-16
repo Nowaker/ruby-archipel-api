@@ -5,9 +5,9 @@ require 'thread'
 require 'active_support/core_ext/numeric/time'
 
 
-class Archipel::Internal::Api
+class Archipel::Api::Internal::Api
   def initialize config
-    config = config.merge Archipel.get_defaults
+    config = config.merge Archipel::Api.get_defaults
 
     @config = config
     config_missing = %i(login password server hypervisor).any? do |property|

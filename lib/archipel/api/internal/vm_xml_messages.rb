@@ -1,8 +1,8 @@
 require_relative 'xml_messages'
 
 
-class Archipel::Internal::VmXmlMessages
-  include Archipel::Internal::XmlMessages
+class Archipel::Api::Internal::VmXmlMessages
+  include Archipel::Api::Internal::XmlMessages
 
   def create_disk jid, name, size_gb, format = 'qcow2'
     render 'create_disk', jid: jid, uuid: uuid_from_jid(jid),

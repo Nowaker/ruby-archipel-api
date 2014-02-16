@@ -1,4 +1,4 @@
-class Archipel::Internal::Config
+class Archipel::Api::Internal::Config
   attr_reader :config
 
 

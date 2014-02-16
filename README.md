@@ -23,10 +23,10 @@ Gem requires Ruby 2.1 to function.
 Authenticate any time you instantiate an API object:
 
     :::ruby
-    vm = Archipel::VmApi.new login: 'login@xmpp.example.com',
+    vm = Archipel::Api::VmApi.new login: 'login@xmpp.example.com',
         password: 'secret', server: 'xmpp.example.com',
 
-    hypervisor = Archipel::HypervisorApi.new login: 'login@xmpp.example.com',
+    hypervisor = Archipel::Api::HypervisorApi.new login: 'login@xmpp.example.com',
         password: 'secret', server: 'xmpp.example.com',
         hypervisor: 'hypervisor@xmpp.pacmanvps.com/resource'
 
@@ -37,8 +37,8 @@ Or provide global settings:
         password: 'secret', server: 'xmpp.example.com',
         hypervisor: 'hypervisor@xmpp.pacmanvps.com/resource'
 
-    vm = Archipel::VmApi.new
-    hypervisor = Archipel::HypervisorApi.new
+    vm = Archipel::Api::VmApi.new
+    hypervisor = Archipel::Api::HypervisorApi.new
 
 ### VmApi
 

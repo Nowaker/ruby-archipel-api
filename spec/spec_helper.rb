@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
-require 'archipel_api'
+require 'archipel/api'
 require_relative 'units/api_asserts'
 require 'test/unit/assertions'
 require 'yaml'
@@ -11,5 +11,5 @@ RSpec.configure do |config|
 
   config = YAML.load_file File.dirname(__FILE__) + '/api.yml'
   config = config.deep_symbolize_keys
-  Archipel.defaults **config
+  Archipel::Api.defaults **config
 end

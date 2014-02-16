@@ -1,15 +1,15 @@
 require_relative '../spec_helper'
-require 'archipel-api/hypervisor_api'
+require 'archipel/api/hypervisor_api'
 
 
-describe Archipel::HypervisorApi do
+describe Archipel::Api::HypervisorApi do
   include ApiAsserts
 
   VM_NAME = 'pacmanvps-unit-test'
   VM_OWNER = 'pacmanvps-robot@xmpp.pacmanvps.com'
 
   before do
-    @api = Archipel::HypervisorApi.new
+    @api = Archipel::Api::HypervisorApi.new
   end
 
   describe 'user management' do

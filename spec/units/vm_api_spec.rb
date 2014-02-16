@@ -1,14 +1,14 @@
 require_relative '../spec_helper'
-require 'archipel-api/vm_api'
+require 'archipel/api/vm_api'
 
 
-describe Archipel::VmApi do
+describe Archipel::Api::VmApi do
   include ApiAsserts
 
   JID = 'efd09d90-6ac6-11e3-8a34-d8d385c218d2@xmpp.pacmanvps.com/utgard'
 
   before do
-    @api = Archipel::VmApi.new
+    @api = Archipel::Api::VmApi.new
   end
 
   describe 'manage storage' do

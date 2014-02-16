@@ -1,6 +1,6 @@
 require 'action_view'
 
-module Archipel::Internal::XmlMessages
+module Archipel::Api::Internal::XmlMessages
   protected
   def render template, **values
     current_dir = File.dirname __FILE__
@@ -12,7 +12,7 @@ module Archipel::Internal::XmlMessages
   end
 
   def subdir
-    self.class.name.match('Archipel::Internal::(.*)XmlMessages')[1].downcase
+    self.class.name.match('Archipel::Api::Internal::(.*)XmlMessages')[1].downcase
   end
 
   def generate_password length
