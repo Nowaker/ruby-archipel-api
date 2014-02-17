@@ -50,8 +50,25 @@ class Archipel::Api::Internal::VmXmlMessages
         enabled_permissions: [], disabled_permissions: disabled
   end
 
+  def info jid
+    render 'info', jid: jid, uuid: uuid_from_jid(jid)
+  end
+
+  def autostart jid, new_state
+    render 'autostart', jid: jid, uuid: uuid_from_jid(jid),
+        new_state: new_state
+  end
+
   def start jid
     render 'start', jid: jid, uuid: uuid_from_jid(jid)
+  end
+
+  def stop jid
+    render 'stop', jid: jid, uuid: uuid_from_jid(jid)
+  end
+
+  def force_stop jid
+    render 'force_stop', jid: jid, uuid: uuid_from_jid(jid)
   end
 
   def xml jid

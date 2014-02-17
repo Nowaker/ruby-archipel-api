@@ -1,5 +1,6 @@
 require_relative 'internal/api'
 require_relative 'internal/vm_xml_messages'
+require_relative 'vm/vm_info'
 
 
 class Archipel::Api::VmApi < Archipel::Api::Internal::Api
@@ -26,6 +27,24 @@ class Archipel::Api::VmApi < Archipel::Api::Internal::Api
   def xml jid
     out = method_missing :xml, jid
     out['query'][0]['domain'][0]
+  end
+
+  def info jid
+    out = method_missing :info, jid
+    resp = out['query'][0]['info'][0]
+    pp resp
+    VmInfo.new resp['state'], resp['autostart'],
+        resp['memory'], resp['maxMem'],
+        resp['cpuPrct'], resp['nrVirtCpu']
+  end
+
+  # Set autostart to new_state; read autostart state when new_state is not given
+  def autostart jid, new_state = nil
+    if new_state.nil?
+      info(jid).autostart
+    else
+      method_missing :autostart, jid, new_state
+    end
   end
 
   def method_missing symbol, *args
