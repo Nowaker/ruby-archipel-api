@@ -20,7 +20,7 @@
         <apic/>
       </features>
       <devices>
-        <emulator>/usr/bin/qemu-kvm</emulator>
+        <emulator>/usr/bin/qemu-system-x86_64</emulator>
         <disk device="disk" type="file">
           <driver cache="none" type="qcow2" name="qemu"/>
           <%= tag :source, file: "/var/lib/libvirt/images/archipel/drives/#{uuid}/disk.qcow2" %>

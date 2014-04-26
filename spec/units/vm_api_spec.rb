@@ -5,7 +5,7 @@ require 'archipel/api/vm_api'
 describe Archipel::Api::VmApi do
   include ApiAsserts
 
-  JID = 'efd09d90-6ac6-11e3-8a34-d8d385c218d2@xmpp.pacmanvps.com/utgard'
+  JID = '8e8d080c-cd9a-11e3-947c-0cc47a000e08@xmpp.pacmanvps.com/asgard'
 
   before do
     @api = Archipel::Api::VmApi.new

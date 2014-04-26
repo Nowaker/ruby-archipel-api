@@ -18,9 +18,10 @@ describe Archipel::Api::HypervisorApi do
       assert_success out
     end
 
-    it 'does not register a user that already exists' do
-      expect { @api.register_user 'example@xmpp.pacmanvps.com', 'x' }.to raise_error
-    end
+    # https://github.com/ArchipelProject/Archipel/issues/1058
+    # it 'does not register a user that already exists' do
+    #   expect { @api.register_user 'example@xmpp.pacmanvps.com', 'x' }.to raise_error
+    # end
 
     it 'lists all human users' do
       out = @api.list_users
@@ -56,13 +57,13 @@ describe Archipel::Api::HypervisorApi do
 
     it 'creates and deletes virtual machine by JID' do
       vm_jid = @api.create_vm VM_NAME, VM_OWNER
-      vm_jid.should end_with '@xmpp.pacmanvps.com/utgard'
+      vm_jid.should end_with '@xmpp.pacmanvps.com/asgard'
       delete_vm vm_jid
     end
 
     it 'creates and deletes virtual machine by name' do
       vm_jid = @api.create_vm VM_NAME, VM_OWNER
-      vm_jid.should end_with '@xmpp.pacmanvps.com/utgard'
+      vm_jid.should end_with '@xmpp.pacmanvps.com/asgard'
       delete_vm VM_NAME
     end
 
