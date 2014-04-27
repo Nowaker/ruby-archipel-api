@@ -36,7 +36,7 @@ class Archipel::Api::Internal::Api
   end
 
   def in_connection
-    Jabber.debug = @config[:xmpp_debug]
+    Jabber.debug = ['true', true].include? @config[:xmpp_debug]
     client = Jabber::Client.new Jabber::JID.new @config[:login]
     client.connect @config[:server]
     client.auth @config[:password]

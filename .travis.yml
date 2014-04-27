@@ -1,0 +1,22 @@
+debug: true
+language: ruby
+cache: bundler
+rvm:
+- 2.1.1
+before_install:
+- gem --version
+before_script:
+script:
+- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && bundle exec rake spec || false'
+addons:
+  code_climate:
+    repo_token:
+      secure: FboAfv2OSlPyh8NoftC/TbBP6b3N690+SZFblMK8Gq7PiqPIgFVT/DdlinhADqfPqt9KWnl/8XfxN8OwReYYJwDDDvVUhtb1LTadRc1c+W2VYThwQNIgS2yEvMl9E4hFTsVJE1teYo1Io2jlxiuQ8qU3Ld5P0eTiqjaH6z9N8LI=
+env:
+  global:
+  - secure: ipu2IgRg51QU6bMPwEr9kuqzlH/zPoxidv1VL0sa1feyYE3Gx4py4OemSMR4HAGj1OH7ZzOtZXXt4moRaiBzr2oY2e1GhT3j1/IoMMgLqVP7K4+WjdgVqVs03i9s5V91S5qH2KdptU5KK8c1+J+yAPinH+HyZDrH6jhhsTU4jOI=
+  - secure: C/NcUOg3l1weZ6u35K4k41TPcN9v2XwdRIwrTzZZBn7cJXNWqannGQ+EQt24pETwpeXAn9sqyg3uMqaHTMrS9Yxw9R1Jbztq0Q14c4PjEY0t5NSaNIbqbDLJpO6yNnj3dsT5wgsvMyVPGwOYZDIDwsB/33WO1ihvfcSnO89/M1k=
+  - secure: gVp5j040ZX1BfqlwnUb/NgT7AJSCvWikM2fFf0ZRaFGKRCvLr51kUyJkCZWPQ5QxDdQg14w45QwodD/BOwSJ2jBNutEt84hA6WMT8q1TZYUsAH0hevkmBUOSu5yQlUPTAQaknql8uPTudlzxsEMgHIONcIx3pz7dbly+llZngKo=
+  - secure: Yakyd9egxVU1c5rvHxwWM6uxSSFJmGgSOsqb1BZHXmr4ygiW5ow4I67iuOxxY8YXxSd3JXrIptw1Jv17bKqveWvopouN1myVvP304Xi3+Y0trYp/4ORKPQPk6wKfeb17uEFZYsx8b/KZWCxN5tkoWvBiT6Nzv7t6fJpnPSrEiz0=
+  - secure: btTzksRHTJN/EAvHxZ2/7Kf5Of67vPanFDxlUP3BwB7wv2pBV7CmveWC7r3M+YxMesqJuyBLC5h1HQTc8jzyyHTSNSHZWAxaXLOY+r964sswZ8vNtg88osWxf5eMnlW6rUNrK0svOV6p/Y9ZogN4uRAgCkkUch5Bqmw2PoJcY2U=
+  - secure: gE0gSoeWyt7i75l5D1+fncIl4a84UOd8/l80vPot/83fuKyniyipfpMFOHysLoqnjNs6jdOIKOJwjo9dwMTRBM2UXxrEJFttKxNXa6ZHAyr+HxhkyIzp4gpjSGSR8DwOc62ZYNB3bK0T8cedXT2wVwRNCdr6WLTMoYFSoWdK7H4=

@@ -11,7 +11,16 @@ require 'active_support/core_ext/hash'
 RSpec.configure do |config|
   include Test::Unit::Assertions
 
-  config = YAML.load_file File.dirname(__FILE__) + '/api.yml'
-  config = config.deep_symbolize_keys
+  config_file = File.dirname(__FILE__) + '/api.yml'
+  if File.exist? config_file
+    config = YAML.load_file(config_file).deep_symbolize_keys
+  else
+    config = {}
+    %w(login password server hypervisor debug xmpp_debug).each do |key|
+      config[key.to_sym] = ENV['API_' + key.upcase]
+    end
+  end
+
+  pp config
   Archipel::Api.defaults **config
 end
