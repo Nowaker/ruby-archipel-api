@@ -1,5 +1,10 @@
 # Version history
 
+## 5 @ 2014-04-27
+
+- depend on a specific version of ActionView
+- remove HypervisorApi grant_permissions call because it wasn't yet tested
+
 ## 4 @ 2014-02-17
 
 - new VmApi calls: info, autostart, stop, force_stop
