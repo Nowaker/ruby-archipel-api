@@ -1,6 +1,8 @@
 # Archipel API
 
 [![Gem Version](https://badge.fury.io/rb/archipel-api.png)](http://badge.fury.io/rb/archipel-api)
+[![GPA](https://codeclimate.com/github/Nowaker/ruby-archipel-api.png)](https://codeclimate.com/github/Nowaker/ruby-archipel-api)
+[![Code coverage](https://codeclimate.com/github/Nowaker/ruby-archipel-api/coverage.png)](https://codeclimate.com/github/Nowaker/ruby-archipel-api)
 
 Ruby API for Archipel Agent, an XMPP-based orchestrator. See [http://archipelproject.org/](http://archipelproject.org/).
 

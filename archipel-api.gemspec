@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec', '~> 2.14'
   spec.add_development_dependency 'rspec-core', '~> 2.14'
+  spec.add_development_dependency 'codeclimate-test-reporter'
 end
