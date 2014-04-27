@@ -10,8 +10,7 @@ script:
 - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && bundle exec rake spec || false'
 addons:
   code_climate:
-    repo_token:
-      secure: QOsAtF9X1BKNOhkKkxJbQrZusa1v1qGvIDuaZJ87Eq2twEVfD877ZdPAvD1uM561ZSxvA0pPbuz6EXNeBn/lQZGbI+eJLMQs/fCQhSm6P2OKAmGw47ReItnXkZy2L0V6jpUUf75dy/Rf6ej1HigLgT8kQh1UewrfmjutsfcIRs8=
+    repo_token: QOsAtF9X1BKNOhkKkxJbQrZusa1v1qGvIDuaZJ87Eq2twEVfD877ZdPAvD1uM561ZSxvA0pPbuz6EXNeBn/lQZGbI+eJLMQs/fCQhSm6P2OKAmGw47ReItnXkZy2L0V6jpUUf75dy/Rf6ej1HigLgT8kQh1UewrfmjutsfcIRs8=
 env:
   global:
   - secure: moYIRlGTTW3q7BGf6zF2xZaRMwlhkG9esUg1ttxwlzovpZ1Y2Nyn5fUTNFr2aQEW6OBHKhws9AdMJ5qZjtfbHnW0gbghzRuWCsZZPrZhhrCCLYzMitFq1D+ag+mMwbQQi9WCn8sa6d7E9sK7CTrfxBrwhIbGvplQrTJdhW8M7GM=
