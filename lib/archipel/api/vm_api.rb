@@ -32,7 +32,6 @@ class Archipel::Api::VmApi < Archipel::Api::Internal::Api
   def info jid
     out = method_missing :info, jid
     resp = out['query'][0]['info'][0]
-    pp resp
     VmInfo.new resp['state'], resp['autostart'],
         resp['memory'], resp['maxMem'],
         resp['cpuPrct'], resp['nrVirtCpu']

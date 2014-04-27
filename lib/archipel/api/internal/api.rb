@@ -73,6 +73,6 @@ class Archipel::Api::Internal::Api
 
   private
   def debug?
-    @config[:debug]
+    ['true', true].include? @config[:debug]
   end
 end

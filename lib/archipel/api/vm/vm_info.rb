@@ -43,7 +43,6 @@ class VmInfo
   attr_reader :cpu_usage, :cpu_number
 
   def initialize state, autostart, memory_kib, memory_max_kib, cpu_usage, cpu_number
-    pp state
     @state = State.from_int state.to_i
     @autostart = autostart.to_i == 0 ? false : true
 
