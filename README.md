@@ -92,8 +92,6 @@ Supported calls:
 - list_vm
 - delete_vm
 
-- grant_permissions
-
 See [unit tests](https://bitbucket.org/stratushost/ruby-archipel-api/src/master/spec/units/hypervisor_api_spec.rb?at=master)
 for usage examples.
 
