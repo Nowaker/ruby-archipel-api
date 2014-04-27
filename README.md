@@ -3,6 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/archipel-api.png)](http://badge.fury.io/rb/archipel-api)
 [![GPA](https://codeclimate.com/github/Nowaker/ruby-archipel-api.png)](https://codeclimate.com/github/Nowaker/ruby-archipel-api)
 [![Code coverage](https://codeclimate.com/github/Nowaker/ruby-archipel-api/coverage.png)](https://codeclimate.com/github/Nowaker/ruby-archipel-api)
+[![Build status](https://travis-ci.org/Nowaker/ruby-archipel-api.svg?branch=master)](https://travis-ci.org/Nowaker/ruby-archipel-api)
 
 Ruby API for Archipel Agent, an XMPP-based orchestrator. See [http://archipelproject.org/](http://archipelproject.org/).
 
@@ -13,12 +14,15 @@ You can use it to manage your PacmanVPS-hosted virtual machines.
 
 Add this line to your application's Gemfile:
 
-    :::ruby
-    gem 'archipel-api'
+```ruby
+gem 'archipel-api'
+```
 
 Then execute:
 
-    $ bundle
+```
+$ bundle
+```
 
 Gem requires Ruby 2.1 to function.
 
@@ -26,23 +30,25 @@ Gem requires Ruby 2.1 to function.
 
 Authenticate any time you instantiate an API object:
 
-    :::ruby
-    vm = Archipel::Api::VmApi.new login: 'login@xmpp.example.com',
-        password: 'secret', server: 'xmpp.example.com',
+```
+vm = Archipel::Api::VmApi.new login: 'login@xmpp.example.com',
+    password: 'secret', server: 'xmpp.example.com',
 
-    hypervisor = Archipel::Api::HypervisorApi.new login: 'login@xmpp.example.com',
-        password: 'secret', server: 'xmpp.example.com',
-        hypervisor: 'hypervisor@xmpp.pacmanvps.com/resource'
+hypervisor = Archipel::Api::HypervisorApi.new login: 'login@xmpp.example.com',
+    password: 'secret', server: 'xmpp.example.com',
+    hypervisor: 'hypervisor@xmpp.pacmanvps.com/resource'
+```
 
 Or provide global settings:
 
-    :::ruby
-    Archipel.defaults login: 'login@xmpp.example.com',
-        password: 'secret', server: 'xmpp.example.com',
-        hypervisor: 'hypervisor@xmpp.pacmanvps.com/resource'
+```
+Archipel.defaults login: 'login@xmpp.example.com',
+    password: 'secret', server: 'xmpp.example.com',
+    hypervisor: 'hypervisor@xmpp.pacmanvps.com/resource'
 
-    vm = Archipel::Api::VmApi.new
-    hypervisor = Archipel::Api::HypervisorApi.new
+vm = Archipel::Api::VmApi.new
+hypervisor = Archipel::Api::HypervisorApi.new
+```
 
 ### VmApi
 

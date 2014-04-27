@@ -21,6 +21,5 @@ RSpec.configure do |config|
     end
   end
 
-  pp config
   Archipel::Api.defaults **config
 end
