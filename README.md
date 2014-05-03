@@ -4,6 +4,7 @@
 [![GPA](https://img.shields.io/codeclimate/github/Nowaker/ruby-archipel-api.svg)](https://codeclimate.com/github/Nowaker/ruby-archipel-api)
 [![Code coverage](https://img.shields.io/codeclimate/coverage/github/Nowaker/ruby-archipel-api.svg)](https://codeclimate.com/github/Nowaker/ruby-archipel-api)
 [![Build status](https://img.shields.io/travis/Nowaker/ruby-archipel-api.svg)](https://travis-ci.org/Nowaker/ruby-archipel-api)
+[![Dependcies status](http://img.shields.io/gemnasium/Nowaker/ruby-archipel-api.svg)](https://gemnasium.com/Nowaker/ruby-archipel-api)
 
 Ruby API for Archipel Agent, an XMPP-based orchestrator. See [http://archipelproject.org/](http://archipelproject.org/).
 
